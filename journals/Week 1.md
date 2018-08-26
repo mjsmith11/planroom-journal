@@ -9,7 +9,7 @@ Based on the needs of the customer, I selected technologies to use for the proje
 One concern in the technology stack is the MySQL version.  At this time, 1and1 is only offering MySQL 5.5 which will reach its end of support in December 2018.  This means that a database version upgrade should be expected during development.  The features of MySQL 5.5 are sufficient, but the JSON feature added in version 5.7 could be useful in this project.
 
 ## Preparing Repositories
-The github repositories for this project are created and contain empty projects with the selected frameworks installed.
+The github repositories for this project are created and contain empty projects with the selected frameworks installed. Note that these repositories are using Gitflow, so the most recent code may be in the develop branch or feature branches. Merges to master are only done for releases.
 *  [planroom-ui](https://github.com/mjsmith11/planroom-ui)
 *  [planroom-api](https://github.com/mjsmith11/planroom-api)
 
