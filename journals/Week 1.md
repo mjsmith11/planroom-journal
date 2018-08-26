@@ -1,4 +1,4 @@
-#Week 1 -- 08/20/18-08/26/18
+# Week 1 -- 08/20/18-08/26/18
 
 ## Documenting Requirements
 Using notes from discussions with the customer, I created initial versions of a user stories document and a nonfunctional requirements document.  These documents are in this week's files.
