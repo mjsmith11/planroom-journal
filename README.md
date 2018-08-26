@@ -16,3 +16,5 @@ with other companies (subcontractors). The planroom will manage the following as
 ## Project Components
 *  [planroom-ui](https://github.com/mjsmith11/planroom-ui) - Vue.js front-end
 *  [planroom-api](https://github.com/mjsmith11/planroom-api) - PHP back-end
+
+[Weekly Journals](journals)
