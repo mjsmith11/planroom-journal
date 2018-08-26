@@ -17,5 +17,7 @@ with other companies (subcontractors). The planroom will manage the following as
 *  [planroom-ui](https://github.com/mjsmith11/planroom-ui) - Vue.js front-end
 *  [planroom-api](https://github.com/mjsmith11/planroom-api) - PHP back-end
 
-
-[Weekly Journals](journals)
+## Links
+*  [Weekly Journals](journals)
+*  [Files](https://1drv.ms/f/s!AmarH2bB5tywgutt_R5VCqEfUNiNLA)
+*  [Kanban Board](https://trello.com/b/0ROSEkXP/planroom-kanban)
