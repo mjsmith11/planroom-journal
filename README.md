@@ -19,5 +19,6 @@ with other companies (subcontractors). The planroom will manage the following as
 
 ## Links
 *  [Weekly Journals](journals)
-*  [Files](https://1drv.ms/f/s!AmarH2bB5tywgutt_R5VCqEfUNiNLA)
+*  [Requirements](requirements)
+*  [Design Documents](design)
 *  [Kanban Board](https://trello.com/b/0ROSEkXP/planroom-kanban)
