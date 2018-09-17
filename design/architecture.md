@@ -7,6 +7,7 @@ The planroom project is a client-server application which uses the following tec
  - Vuex – State Management 
  - Axios – HTTP client 
  - Bootstrap - styling 
+ - Jest - Unit Testing
 
 ## Server
  - MySQL  – Data Storage Excluding Plan files 
@@ -14,3 +15,4 @@ The planroom project is a client-server application which uses the following tec
  - SMTP – Sending invitations and messages 
  - PHP with Slim Framework – REST APIs 
  - Phinx - Database Migrations
+ - phpunit - Unit Testing

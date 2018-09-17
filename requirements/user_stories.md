@@ -8,7 +8,7 @@ As a contractor, I want to access the contractor area of the planroom with a use
 
 ### C2. Creating a Project
 #### C2.1
-As a contractor I want to add a project to the planroom including bid date, date and time that subcontractor bids are due to the contractor, prebid date, prebid time, prebid address, email where subcontractors should send bids, bonding requirements, and taxation requirements so that the planroom will manage the project.
+As a contractor I want to add a project to the planroom including bid date, date and time that subcontractor bids are due to the contractor, prebid date, prebid time, prebid address, email where subcontractors should send bids, bonding requirements, taxation requirements, and an optional special note so that the planroom will manage the project.
 
 #### C2.2
 As a contractor I want the attach plan files which may be several hundred MB in size to a project so that they can be distributed to subcontractors.
