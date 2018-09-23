@@ -7,4 +7,4 @@ Some of these are not great as far as well-defined measurable requirements, but 
   - Pages accessed by subcontractors should contain branding similar to a company letterhead.
   - Pages accessed by subcontractors should contain picture or graphics.
 - The system should always expect to have times entered in Eastern Standard Time.
-- The system should always display times in Eastern Standard Time with EST.
+- The system should always display times in Eastern Standard Time with EST and CST when applicable.
