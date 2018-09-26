@@ -12,7 +12,7 @@ This week I completed [Issue #8](https://github.com/mjsmith11/planroom-journal/i
 ## Project Display
 I started working on [Issue #14](https://github.com/mjsmith11/planroom-journal/issues/14) to display projects that are in the system. It includes a listing of all projects and a detail view for a single project. This week I completed the code for this feature. Next week, I will work on the refactoring and testing this feature. 
 
-## Customer Demo
+## Customer Demo (9/23/2018)
 I showed the customer the new project display feature and obtained the following feedback:
  - Add a boolean field to the job table that is set to true when central time should be displayed.
  - The bidDate field is redundant.  The date portion of the subcontractorBidsDue field should be used instead.  Also the subcontractorBidsDue field on the add job form should be moved to the current location of the bidDate field.
