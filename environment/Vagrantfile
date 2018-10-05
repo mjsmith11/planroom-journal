@@ -1,0 +1,146 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-16.04"
+
+  config.vm.provider :virtualbox do |vb|
+    vb.name = 'planroom'
+    vb.gui = false
+    vb.memory = 4096
+    vb.cpus = 2
+  end
+
+  # Shared folders
+  config.vm.synced_folder "./shared", "/home/vagrant/shared"
+  config.vm.synced_folder "./repos", "/home/vagrant/repos"
+
+  # Forward UI Port
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
+  config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.network :forwarded_port, guest: 3306, host: 3306
+
+  # install sshpass to force reloading of user security
+  config.vm.provision "shell", inline: "apt-get install sshpass", privileged: true
+
+  $script = <<-SCRIPT
+  echo " "
+  echo " "
+  echo "************************************************"
+  echo "Installing docker"
+  echo "************************************************"
+  sudo apt-get update
+  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+  sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+  sudo apt-get update
+  sudo apt-get install -y docker-engine
+  sudo usermod -aG docker vagrant
+  sudo systemctl daemon-reload
+  sudo systemctl restart docker
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: true
+
+  # Run a MySQL Container
+  $script = <<-SCRIPT
+  echo " "
+  echo " "
+  echo "************************************************"
+  echo "Setting Up MySQL"
+  echo "************************************************"
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: false 
+  config.vm.provision "shell", inline: 'sshpass -p "vagrant" ssh -oStrictHostKeyChecking=no vagrant@localhost "docker run --name planroom-mysql -e MYSQL_ROOT_PASSWORD=IAmRoot -e MYSQL_DATABASE=planroom -e MYSQL_USER=planroom -e MYSQL_PASSWORD=planroom -d -p 3306:3306 mysql:5.5"', privileged: false
+  config.vm.provision "shell", inline: 'sshpass -p "vagrant" ssh -oStrictHostKeyChecking=no vagrant@localhost "docker start planroom-mysql"', privileged: false, run: "always"
+
+  # Install php tools
+  $script = <<-SCRIPT
+  echo " "
+  echo " "
+  echo "************************************************"
+  echo "Installing PHP Tools"
+  echo "************************************************"
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: false 
+  config.vm.provision "shell", inline: 'sudo add-apt-repository ppa:ondrej/php', privileged: true
+  config.vm.provision "shell", inline: 'sudo apt-get update', privileged: true
+  config.vm.provision "shell", inline: 'sudo apt-get install -y php7.2-cli', privileged: true
+  config.vm.provision "shell", inline: 'sudo apt-get install -y php7.2-mysql', privileged: true
+  config.vm.provision "shell", inline: 'sudo apt-get install -y php7.2-curl', privileged: true
+  config.vm.provision "shell", inline: 'sudo apt-get install -y php7.2-xml', privileged: true
+  config.vm.provision "shell", inline: 'sudo apt install -y zip unzip php7.2-zip', privileged: true
+  config.vm.provision "shell", inline: 'curl -Ss https://getcomposer.org/installer | php', privileged: false
+  config.vm.provision "shell", inline: 'sudo mv composer.phar /usr/bin/composer', privileged: true
+
+  $script = <<-SCRIPT
+  echo " "
+  echo " "
+  echo "************************************************"
+  echo "Configuring planroom-api"
+  echo "************************************************"
+  rm -rf repos/planroom-ui
+  mkdir repos/planroom-api
+  git clone https://github.com/mjsmith11/planroom-api.git repos/planroom-api
+  composer install -d repos/planroom-api
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: false 
+  config.vm.provision "file", source: './config.json', destination: 'repos/planroom-api/config.json'
+  $script = <<-SCRIPT
+  cd repos/planroom-api
+  vendor/bin/phinx migrate
+  cd ~
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: false 
+
+  $script = <<-SCRIPT
+  echo " "
+  echo " "
+  echo "************************************************"
+  echo "Installing Node"
+  echo "************************************************"
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+  export NVM_DIR="/home/vagrant/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm install 8.12.0
+  nvm use 8.12.0
+  echo "nvm use 8.12.0" >> /home/vagrant/.bashrc
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: false
+
+  $script = <<-SCRIPT
+  echo " "
+  echo " "
+  echo "************************************************"
+  echo "Configuring planroom-ui"
+  echo "************************************************"
+  rm -rf repos/planroom-ui
+  mkdir repos/planroom-ui
+  git clone https://github.com/mjsmith11/planroom-ui.git repos/planroom-ui
+  export NVM_DIR="/home/vagrant/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm use 8.12.0
+  cd repos/planroom-ui
+  npm install
+  cd ~
+  SCRIPT
+  config.vm.provision "shell", inline: $script, privileged: false 
+
+  
+# share repos  message (add aws creds, google key, commands)
+  config.vm.post_up_message = "
+  ************************************************
+  ************************************************
+  Notes
+  ************************************************
+  ************************************************
+  - If you need AWS S3 connectivity, you must add the aws object to
+      /home/vagrant/repos/planroom-api/config.json as detailed in example_config.json
+  - If you need the Google Address Service, you must add your key to 
+      /home/vagrant/repos/planroom-ui/public/index.html
+  - planroom-api commands
+      - composer run start      (run development server)
+      - composer run test       (run unit tests)
+      - composer run lint       (run phpcheckstyle)
+  - planroom-ui commands
+      - npm run serve           (run development server)
+      - npm run lint            (run linter)
+      - npm run test:unit       (run unit tests)
+      - npm run test:unit:write (run unit tests and write snapshots)  
+  "
+end

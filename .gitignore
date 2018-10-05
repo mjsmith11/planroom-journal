@@ -1,0 +1,5 @@
+environment/.vagrant/*
+environment/repos/*
+!environment/repos/.nothing
+environment/shared/*
+!environment/shared/.nothing

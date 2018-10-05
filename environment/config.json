@@ -1,0 +1,19 @@
+
+{
+    "mysql": {
+        "host": "127.0.0.1",
+        "port": "3306",
+        "username": "planroom",
+        "password": "planroom",
+        "database": "planroom"
+    },
+    "cors_origins": [
+        "http://localhost:8080"
+    ],
+    "display_error_details": true,
+    "logging": {
+        "level": "debug",
+        "maxFiles": 7
+    }
+    
+}
