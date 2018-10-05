@@ -1,4 +1,4 @@
-#Planroom Environment
+# Planroom Environment
 ## What's in it?
  - Ubuntu 16.04 VM with 4 GB RAM and 2 Processor Cores
  - Generic Shared Folder
