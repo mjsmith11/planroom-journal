@@ -1,11 +1,11 @@
 # Planroom Environment
 ## What's in it?
- - Ubuntu 16.04 VM with 4 GB RAM and 2 Processor Cores
+ - Ubuntu 16.04 VM with 4 GB RAM and 2 Processor Cores (creds: vagrant/vagrant)
  - Generic Shared Folder
  - Shared Repos Folder
  - Ports 8080, 8000, and 3306 forwarded to the host. (additional configuration is required if these are changed or adjusted for collisions)
  - Docker
- - MySQL running in Docker
+ - MySQL running in Docker (creds: planroom/planroom)
  - PHP 7.2 with Composer
  - node 8.12.0
  - planroom-api
