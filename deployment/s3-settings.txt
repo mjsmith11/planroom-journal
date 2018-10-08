@@ -1,0 +1,57 @@
+--------------------------------
+Properties
+--------------------------------
+Versioning - Disabled
+Server Access Logging - Disabled
+Static Website Hosting - Disabled
+Object-level logging - Disabled
+Default Encryption - AES-256
+Tags - not required
+Transfer Acceleration - Suspended
+Events - none
+Requester pays - Disabled
+
+--------------------------------
+Permissions
+--------------------------------
+Access Control List - Restricted to specific AWS accounts
+Bucket Policy - none
+CORS configuration:
+    <?xml version="1.0" encoding="UTF-8"?>
+    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>POST</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <ExposeHeader>ETag</ExposeHeader>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+    </CORSConfiguration>
+
+--------------------------------
+Management
+--------------------------------
+Lifecycle - not needed
+Replication - not needed
+Analytics - not needed
+Metrics - not needed
+Inventory - not needed
+
+
+Security policy needed for IAM user used by planroom:
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": [
+                    "s3:PutObject",
+                    "s3:GetObject",
+                    "s3:ListBucket",
+                    "s3:DeleteObject"
+                ],
+                "Resource": "*"
+            }
+        ]
+    }
