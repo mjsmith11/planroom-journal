@@ -8,10 +8,13 @@ As a contractor, I want to access the contractor area of the planroom with a use
 
 ### C2. Creating a Project
 #### C2.1
-As a contractor I want to add a project to the planroom including date and time that subcontractor bids are due to the contractor, prebid date, prebid time, prebid address, email where subcontractors should send bids, bonding requirements, taxation requirements, applicability of Central Time, and an optional special note so that the planroom will manage the project.
+As a contractor I want to add a project to the planroom including date and time that subcontractor bids are due to the contractor, prebid date, prebid time, prebid address, estimator (record from user table), bonding requirements, taxation requirements, applicability of Central Time, and an optional special note so that the planroom will manage the project.
 
 #### C2.2
 As a contractor I want the attach plan files which may be several hundred MB in size to a project so that they can be distributed to subcontractors.
+
+#### C2.3
+As a contractor attaching plan files, I want to be warned if I attempt to attach a file with the same name as another file on the job so that I can avoid unintentially overwriting files.
 
 ### C3. Viewing Projects
 #### C3.1
@@ -19,7 +22,7 @@ As a contractor, I want to see projects arranged by the date portion of the subc
 
 ### C4. Sending Invitations
 #### C4.1
-As a contractor I want to invite subcontractors to view a project via email so that the subcontractors can bid on the project.
+As a contractor I want to invite or reinvite subcontractors to view a project via email so that the subcontractors can bid on the project.
 
 #### C4.2
 As a contractor, I want to limit the time for which a subcontractor may access a project so traffic to the plan storage location is controlled.
@@ -55,6 +58,10 @@ As a contractor, I want to message all subcontractors or subcontractors belongin
 #### C8.1
 As a contractor, I want to delete a project so that I can reduce unnecessary use of cloud storage space.
 
+### C9. Deleting a File
+#### C9.1
+As a contractor, I want to be able to delete a file from a job so that I can keep files up to date.
+
 ## Subcontractor User
 This user is a representative of a company other than the contractor.  The contractor seeks bids from a subcontractor in order to outsource a portion of a given project.
 
@@ -70,5 +77,5 @@ As a subcontractor that has been invited to a project, I want to indicate to the
 As a subcontractor that has been invited to a project, I want to select the files I wish to download and download them as a single zip file so that I can minimize the time it takes to download.
 
 #### S2.3
-As a subcontractor that has been invited to a project, I want to view the project information and download the files so that I can prepare my bid.
+As a subcontractor that has been invited to a project, I want to view the project information including the expiration time of my invitation and download the files so that I can prepare my bid.
 

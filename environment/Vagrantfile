@@ -141,6 +141,10 @@ Vagrant.configure("2") do |config|
       - npm run serve           (run development server)
       - npm run lint            (run linter)
       - npm run test:unit       (run unit tests)
-      - npm run test:unit:write (run unit tests and write snapshots)  
+      - npm run test:unit:write (run unit tests and write snapshots)
+  - ports forwarded to host
+      - 8000 - planroom-api
+      - 8080 - planroom-ui
+      - 3306 - MySQL  
   "
 end

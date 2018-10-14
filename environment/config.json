@@ -14,6 +14,13 @@
     "logging": {
         "level": "debug",
         "maxFiles": 7
+    },
+    "aws": {
+        "key": "",
+        "secret": "",
+        "region": "",
+        "bucket": "",
+        "urlExpiration": 15
     }
     
 }
