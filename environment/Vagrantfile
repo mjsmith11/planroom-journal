@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   # Shared folders
   config.vm.synced_folder "./shared", "/home/vagrant/shared"
-  config.vm.synced_folder "./repos", "/home/vagrant/repos"
+  # config.vm.synced_folder "./repos", "/home/vagrant/repos"
 
   # Forward UI Port
   config.vm.network :forwarded_port, guest: 8080, host: 8080
