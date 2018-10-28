@@ -85,6 +85,9 @@ Vagrant.configure("2") do |config|
   cd repos/planroom-api
   vendor/bin/phinx migrate
   cd ~
+  cp /vagrant/seedDB.php repos/planroom-api
+  php repos/planroom-api/seedDB.php
+  rm repos/planroom-api/seedDB.php
   SCRIPT
   config.vm.provision "shell", inline: $script, privileged: false 
 

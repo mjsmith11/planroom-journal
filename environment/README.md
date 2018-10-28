@@ -9,6 +9,7 @@
  - node 8.12.0
  - planroom-api
  - planroom-ui
+ - default user: default@email.com/password
 
 ## How to use it
 1. Install Virtualbox

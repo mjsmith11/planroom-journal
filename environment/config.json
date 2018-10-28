@@ -21,6 +21,10 @@
         "region": "",
         "bucket": "",
         "urlExpiration": 15
+    },
+    "jwt": {
+        "secret": "SuperSecret",
+        "contractorExp": 15
     }
     
 }
