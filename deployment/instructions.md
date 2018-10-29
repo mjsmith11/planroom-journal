@@ -1,10 +1,10 @@
 # Planroom Deployment Instructions
 ## Prerequisites
- - planroom-ui build **The api url must be set correctly in .env.production at build time
+ - planroom-ui build **The api url must be set correctly in .env.production at build time**
  - planroom-api build
  - Apache server
  - MySQL Database
- - AWS S3 bucket and IAM user **[Configuration notes](https://github.com/mjsmith11/planroom-journal/blob/master/deployment/s3-settings.txt)
+ - AWS S3 bucket and IAM user **[Configuration notes]**(https://github.com/mjsmith11/planroom-journal/blob/master/deployment/s3-settings.txt)
  - Google Cloud Platform key for Places API and Maps JavaScript API
 
 ## Before Deploying
@@ -20,10 +20,10 @@
  1. Create a directory on the Apache server for the api.
  1. Unzip the build. 
  1. Create a config.json in the build's dist directory based on the [example_config.json](https://github.com/mjsmith11/planroom-api/blob/master/example_config.json).
-   1. Add connection info for MySQL Database.
-   1. CORS Origins should contain the url of the ui.
-   1. display_error_details should be false
-   1. Setup logging parameters as needed.
-   1. Add AWS S3 connection info. The reccomended value of urlExpiration is 15.
-   1. Add a JWT secret and contractorExp.  The reccomended value of contractorExp is 15.
- 1. Run phinx migrate to update database schemas.  **Note: Issues can happen when trying to run phinx in a production environment.  It may be required to temporarily connect a development environment to the production database or manually create tables (using exported queries from a development database) for this step. 
+     1. Add connection info for MySQL Database.
+     1. CORS Origins should contain the url of the ui.
+     1. display_error_details should be false
+     1. Setup logging parameters as needed.
+     1. Add AWS S3 connection info. The reccomended value of urlExpiration is 15.
+     1. Add a JWT secret and contractorExp.  The reccomended value of contractorExp is 15.
+ 1. Run phinx migrate to update database schemas.  **Note: Issues can happen when trying to run phinx in a production environment.  It may be required to temporarily connect a development environment to the production database or manually create tables (using exported queries from a development database) for this step.**
