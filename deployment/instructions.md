@@ -20,7 +20,7 @@
  1. Create a directory on the Apache server for the api.
  1. Unzip the build. 
  1. Create a config.json in the build's dist directory based on the [example_config.json](https://github.com/mjsmith11/planroom-api/blob/master/example_config.json).
-  1. Add connection info for MySQL Database.
+     1. Add connection info for MySQL Database.
    1. CORS Origins should contain the url of the ui.
    1. display_error_details should be false
    1. Setup logging parameters as needed.
