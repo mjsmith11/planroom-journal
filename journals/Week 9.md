@@ -9,7 +9,7 @@ The backend has two new routes, '/login' and '/token-refresh'. On success, both 
 When reading online sources, I found that tokens are often distributed in pairs: an access token and a refresh token. I considered using the two token approach for this project and decided against it. This approach is used in an architecture which includes an authorization server responsible only for issuing tokens and one or more resource servers. The access tokens are used to authenticate with resource servers and considered a smaller security risk if lost because they are typically short lived. Refresh tokens can have longer lives and are intended to be stored more securely by the client. They are only ever exchanged with the authorization server to obtain fresh tokens.  Since the system architecture does not include an authorization server and resource servers, I opted to not use the two token approach.
 
 ### Frontend
-I used [vue-auth-vue](https://github.com/christiannwamba/vue-auth-vue) as a guide for integrating the frontend to the backend's new authentication system.
+I used [vue-auth-vue](https://github.com/christiannwamba/vue-auth-vuex) as a guide for integrating the frontend to the backend's new authentication system.
 
 The frontend now uses Vuex to manage the state.  It keeps track of which user is logged in and the access token.  It also keeps the token refreshed automatically and adds the token as a common header in axios. Tokens do not get stored in local storage or cookies at this time.
 
