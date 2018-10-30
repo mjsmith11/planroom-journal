@@ -16,6 +16,7 @@ In the process of deployment, issues were discovered that were fixed via a serie
  - Change header name for the auth token to Planroom-Authorization from Authorization because the Authorization header is getting stripped off of requests.
  - Add the Planroom-Authorization to the dropzone configuration used for file uploads.
  - Changes to build to include all required files (An .htaccess file was missing in the planroom-api build).
+
 It could be argued that the change of the Authorization header name breaks the api and 2.0 versions should be used. I decided not to do this based on the argument that the public api had not yet been declared because a successful deployment had not happened.
 
 ## Vagrant Update
