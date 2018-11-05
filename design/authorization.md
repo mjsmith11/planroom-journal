@@ -11,13 +11,15 @@ The payload of the tokens will contain the following fields used for authorizati
 ### Contractor Users
  - All routes
 ### Subcontractor Users
- - GET /jobs/:id
- - GET /jobs/:id/plans
+ - GET `/jobs/:id`
+ - GET `/jobs/:id/plans`
+
 Note: Each subcontractor user only has permission for the id specified in his or her token.
 
 ## Frontend Route Permissions
 ### Contractor Users
  - All routes
 ### Subcontractor Users
- - /jobs/:id
+ - `/jobs/:id`
+
 Note: Each subcontractor user only has permission for the id specified in his or her token.
