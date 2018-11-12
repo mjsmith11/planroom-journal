@@ -25,6 +25,11 @@
     "jwt": {
         "secret": "SuperSecret",
         "contractorExp": 15
-    }
+    },
+    "mail": {
+        "username": "dev@planroom.benchmarkmechanical.com",
+        "fromName": "Planroom Dev"
+    },
+    "baseUrl": "https://someurl.com"  
     
 }

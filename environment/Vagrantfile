@@ -136,6 +136,7 @@ Vagrant.configure("2") do |config|
       /home/vagrant/repos/planroom-api/config.json as detailed in example_config.json
   - If you need the Google Address Service, you must add your key to 
       /home/vagrant/repos/planroom-ui/public/index.html
+  - Emailing will not work unless the you set up the php mail function
   - planroom-api commands
       - composer run start      (run development server)
       - composer run test       (run unit tests)

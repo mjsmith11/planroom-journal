@@ -12,7 +12,6 @@ The planroom project is a client-server application which uses the following tec
 ## Server
  - MySQL  – Data Storage Excluding Plan files 
  - Amazon S3 – Plan file storage 
- - SMTP – Sending invitations and messages 
  - PHP with Slim Framework – REST APIs 
  - Phinx - Database Migrations
  - phpunit - Unit Testing
