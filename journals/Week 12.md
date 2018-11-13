@@ -1,4 +1,4 @@
-# Week 11 -- 11/05-11/11/18
+# Week 12 -- 11/05/18-11/11/18
 
 ## Token Based Subcontractor Authentication
 This week I finished all code and testing for [Issue 17](https://github.com/mjsmith11/planroom-journal/issues/17) to authenticate subcontractors with a token that they will recieve via email. While implementing this task, I also updated planroom-ui to use webpack's code splitting and lazy loading.
