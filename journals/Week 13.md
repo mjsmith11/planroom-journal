@@ -26,7 +26,7 @@ Due to the noted bugs, I needed to clean up some of the data on AWS. This includ
 This week, I completed [Issue 9](https://github.com/mjsmith11/planroom-journal/issues/9) to create documentation for the API.  Directions for generating and viewing this documentation is in the README in the planroom-api repository.  The documentation is currently only in the develop branch.
 
 ## Getting Started Files
-For the planroom-ui and planroom-api repositories, I created getting started files detailing the contents of the repository.
+For the planroom-ui and planroom-api repositories, I created getting started files detailing the contents of the repository. These files currently reside in the develop branches.
 
 ## Favicon
 I completed [Issue 26](https://github.com/mjsmith11/planroom-journal/issues/26) to change the favicon file to a branded icon instead of the Vue logo.
