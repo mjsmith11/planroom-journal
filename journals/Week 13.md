@@ -5,7 +5,7 @@ This week marks the first time that the customer used the system. On November 13
 ### Feedback
 I have received initial feedback from the customer since they started using the system:
  - In the future, we will redisign the subcontractor view including incorporating a photo provided by the customer, increasing the space for the bid email address so it does not wrap, and making the bid email a mailto link.
- - Sometimes plans will be PDF portfolios. It has been noted that many browsers including chrome load these files with their internal pdf viewer, a message is displayed that the PDF portfolio must be opened with Acrobat X or Adobe Reader X. This is due to the fact that Flash is required to display these files in the browser.  I'm unaware of a way to avoid the message at this time.
+ - Sometimes plans will be PDF portfolios. It has been noted that when many browsers, including chrome, load these files with their internal pdf viewer, a message is displayed that the PDF portfolio must be opened with Acrobat X or Adobe Reader X. This is due to the fact that Flash is required to display these files in the browser.  I'm unaware of a way to avoid the message at this time.
 
  We asked the individuals who received invitations for feedback, but I have not received that feedback yet.
 
@@ -19,7 +19,7 @@ Currently deployed versions are planroom-ui 1.1.2 and planroom-api 1.1.1.
 
 
 ### Cleaning up data
-Due to the noted bugs, I needed to clean up some of the data on AWS. This included renaming files so that they have the .pdf extension and manually adding metadata.
+Due to the noted bugs, I needed to clean up some of the data on AWS. This included renaming files in S3 so that they have the .pdf extension and manually adding S3 metadata.
 
 
 ## API Documentation with Swagger
