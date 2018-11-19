@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
   # Forward UI Port
   config.vm.network :forwarded_port, guest: 8080, host: 8080
   config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.network :forwarded_port, guest: 8001, host: 8001
   config.vm.network :forwarded_port, guest: 3306, host: 3306
 
   # install sshpass to force reloading of user security
@@ -141,6 +142,8 @@ Vagrant.configure("2") do |config|
       - composer run start      (run development server)
       - composer run test       (run unit tests)
       - composer run lint       (run phpcheckstyle)
+      - composer run doc        (generate documentation)
+      - composer run doc:serve  (run webserver to view documentation)
   - planroom-ui commands
       - npm run serve           (run development server)
       - npm run lint            (run linter)
@@ -148,6 +151,7 @@ Vagrant.configure("2") do |config|
       - npm run test:unit:write (run unit tests and write snapshots)
   - ports forwarded to host
       - 8000 - planroom-api
+      - 8001 - Swagger
       - 8080 - planroom-ui
       - 3306 - MySQL  
   "
