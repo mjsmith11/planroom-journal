@@ -28,5 +28,6 @@
      1. Add AWS S3 connection info. The reccomended value of urlExpiration is 15.
      1. Add a JWT secret and contractorExp.  The reccomended value of contractorExp is 15.
      1. Add the base url. This is used for building the links to send in emails.
- 1. Run phinx migrate to update database schemas.  **Note: Issues can happen when trying to run phinx in a production environment.  It may be required to temporarily connect a development environment to the production database or manually create tables (using exported queries from a development database) for this step.**
+ 1. Update the require statement in `vendor/bin/phinx` to an absolute path to `vendor/robmorgan/phinx/app/phinx.php` (`php7.1 vendor/bin/phinx migrate`).  
+ 1. Run phinx migrate to update database schemas. 
  1. Replace the contents of the api directory on the Apache server with the content's of the dist directory.
